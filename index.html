@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лучшие сайты знакомств в 2026 году: рейтинг топовых сервисов от LoveRating</title>
+    <title>Рейтинг сайтов знакомств 2026 | LoveRating</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -34,12 +34,17 @@
 
         .header-top {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 14px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e9edf2;
-            flex-wrap: wrap;
-            gap: 15px;
+        }
+
+        .header-row-1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
@@ -47,14 +52,31 @@
             font-weight: 700;
             color: #e11d48;
             letter-spacing: -0.5px;
+            flex-shrink: 0;
         }
         .logo i {
             margin-right: 8px;
         }
 
+        .burger-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #0f172a;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .burger-btn:hover {
+            background: #f1f5f9;
+        }
+
         .header-meta {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             gap: 20px;
             flex-wrap: wrap;
         }
@@ -143,6 +165,50 @@
         .trust-item span {
             color: #475569;
             font-weight: 400;
+        }
+
+        .main-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 22px;
+        }
+        .main-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .main-nav a:hover {
+            color: #e11d48;
+        }
+
+        @media (max-width: 700px) {
+            .burger-btn {
+                display: block;
+            }
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                gap: 4px;
+                padding-top: 6px;
+                order: 3;
+            }
+            .main-nav.open {
+                display: flex;
+            }
+            .main-nav a {
+                width: 100%;
+                padding: 8px 0;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            .header-row-1 {
+                flex-wrap: wrap;
+            }
         }
 
         .page-title h1 {
@@ -391,7 +457,7 @@
         @media (max-width: 600px) {
             .container { padding: 15px; }
             .trust-banner { flex-direction: column; align-items: flex-start; }
-            .header-top { flex-direction: column; align-items: flex-start; }
+            .header-meta { justify-content: flex-start; }
         }
 
         /* --- Остальные стили (экспертиза, автор, FAQ, футер) --- */
@@ -603,6 +669,48 @@
             font-size: 15px;
         }
 
+        .linkhub-section {
+            margin: 40px 0 20px;
+            border-top: 1px solid #e9edf2;
+            padding-top: 30px;
+        }
+        .linkhub-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .linkhub-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #334155;
+            margin: 22px 0 10px;
+        }
+        .linkhub-intro {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .linkhub-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 10px;
+        }
+        .linkhub-cloud a {
+            background: #f1f5f9;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 40px;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .linkhub-cloud a:hover {
+            background: #e11d48;
+            color: #fff;
+        }
+
         .footer-eeat {
             margin-top: 40px;
             padding-top: 25px;
@@ -641,8 +749,20 @@
 <div class="container">
 
     <header class="header-top">
-        <div class="logo">
-            <i class="fas fa-heart"></i> LoveRating
+        <div class="header-row-1">
+            <div class="logo">
+                <i class="fas fa-heart"></i> LoveRating
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <a href="#">Главная</a>
+                <a href="#">Рейтинг сайтов знакомств — Россия</a>
+                <a href="#">Рейтинг сайтов знакомств — Беларусь</a>
+                <a href="#">О проекте</a>
+                <a href="#">Контакты</a>
+            </nav>
+            <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
         <div class="header-meta">
             <div class="update-badge">
@@ -659,7 +779,7 @@
     <div class="trust-banner">
         <div class="trust-item"><i class="fas fa-shield-halved"></i> <span class="trust-text"><strong>Проверенные сайты</strong> <span>| только официальные версии</span></span></div>
         <div class="trust-item"><i class="fas fa-pen-fancy"></i> <span class="trust-text"><strong>Честные обзоры</strong> <span>| без копипаста и рекламных штампов</span></span></div>
-        <div class="trust-item"><i class="fas fa-list-check"></i> <span class="trust-text"><strong>15 сервисов сравнили</strong> <span>| 2026</span></span></div>
+        <div class="trust-item"><i class="fas fa-list-check"></i> <span class="trust-text"><strong>15 сервисов сравнили</strong> <span>| лето 2026</span></span></div>
         <div class="trust-item"><i class="fas fa-clock"></i> <span class="trust-text"><strong>Регистрация за 5 минут</strong> <span>| бесплатно</span></span></div>
     </div>
 
@@ -1112,7 +1232,7 @@
                 <div class="card-verdict">Наше мнение: интерфейс выглядит немного устаревшим, но бесплатная неделя Премиум — честный способ оценить весь функционал перед оплатой.</div>
             </div>
             <div class="card-actions">
-                <a href="#" class="btn-primary">Попробовать</a>
+                <a href="#" class="btn-primary">Попробовать Премиум</a>
                 <a href="#" class="btn-outline">Подробнее</a>
                 <div class="small-meta">Бесплатно / пробный Премиум 7 дней</div>
             </div>
@@ -1184,8 +1304,8 @@
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="author-update">
-                    <span class="update-item"><i class="fas fa-pen-fancy"></i> Статья написана: 01.09.2026</span>
-                    <span class="update-item"><i class="fas fa-rotate"></i> Последнее обновление: <strong>01.09.2026</strong></span>
+                    <span class="update-item"><i class="fas fa-pen-fancy"></i> Статья написана: 20.08.2026</span>
+                    <span class="update-item"><i class="fas fa-rotate"></i> Последнее обновление: <strong>31.08.2026</strong></span>
                     <span class="update-item"><i class="fas fa-clock"></i> Время чтения: 9 минут</span>
                 </div>
             </div>
@@ -1216,17 +1336,165 @@
         </div>
     </section>
 
+    <section class="linkhub-section">
+        <h2>Лучшие сайты знакомств по странам</h2>
+        <p class="linkhub-intro">Отдельные подборки для разных стран — с поправкой на доступность сервисов и размер русскоязычной аудитории в каждой из них.</p>
+        <div class="linkhub-cloud">
+            <a href="#">Россия</a>
+            <a href="#">Беларусь</a>
+            <a href="#">Казахстан</a>
+            <a href="#">Узбекистан</a>
+            <a href="#">Сербия</a>
+            <a href="#">Украина</a>
+            <a href="#">Международные знакомства</a>
+        </div>
+    </section>
+
+    <section class="linkhub-section">
+        <h2>Лучшие сайты знакомств по городам</h2>
+        <p class="linkhub-intro">Подборки по городам и регионам России — какие сервисы дают больше активных анкет именно у вас поблизости.</p>
+        <div class="linkhub-cloud">
+            <a href="#">Азов</a>
+            <a href="#">Алтайский край</a>
+            <a href="#">Анапа</a>
+            <a href="#">Арзамас</a>
+            <a href="#">Армавир</a>
+            <a href="#">Астрахань</a>
+            <a href="#">Балаково</a>
+            <a href="#">Барнаул</a>
+            <a href="#">Белгород</a>
+            <a href="#">Белово</a>
+            <a href="#">Бийск</a>
+            <a href="#">Благовещенск</a>
+            <a href="#">Брянск</a>
+            <a href="#">Великий Новгород</a>
+            <a href="#">Владивосток</a>
+            <a href="#">Волгоград</a>
+            <a href="#">Волжский</a>
+            <a href="#">Воронеж</a>
+            <a href="#">Выборг</a>
+            <a href="#">ДНР</a>
+            <a href="#">Екатеринбург</a>
+            <a href="#">Железногорск</a>
+            <a href="#">Иваново</a>
+            <a href="#">Ижевск</a>
+            <a href="#">Иркутск</a>
+            <a href="#">Йошкар-Ола</a>
+            <a href="#">Калининград</a>
+            <a href="#">Калуга</a>
+            <a href="#">Каменск-Уральский</a>
+            <a href="#">Камчатский край</a>
+            <a href="#">Кемерово</a>
+            <a href="#">Киров</a>
+            <a href="#">Коломна</a>
+            <a href="#">Комсомольск-на-Амуре</a>
+            <a href="#">Копейск</a>
+            <a href="#">Кострома</a>
+            <a href="#">Краснодар</a>
+            <a href="#">Красноярск</a>
+            <a href="#">Крым</a>
+            <a href="#">Курган</a>
+            <a href="#">Липецк</a>
+            <a href="#">Лиски</a>
+            <a href="#">Магнитогорск</a>
+            <a href="#">Междуреченск</a>
+            <a href="#">Миллерово</a>
+            <a href="#">Москва</a>
+            <a href="#">Муром</a>
+            <a href="#">Набережные Челны</a>
+            <a href="#">Нальчик</a>
+            <a href="#">Нижневартовск</a>
+            <a href="#">Нижний Новгород</a>
+            <a href="#">Нижний Тагил</a>
+            <a href="#">Новокузнецк</a>
+            <a href="#">Новороссийск</a>
+            <a href="#">Орёл</a>
+            <a href="#">Оренбург</a>
+            <a href="#">Орск</a>
+            <a href="#">Пенза</a>
+            <a href="#">Пермь</a>
+            <a href="#">Петрозаводск</a>
+            <a href="#">Приморский край</a>
+            <a href="#">Прокопьевск</a>
+            <a href="#">Псков</a>
+            <a href="#">Ростовская область</a>
+            <a href="#">Рязань</a>
+            <a href="#">Санкт-Петербург</a>
+            <a href="#">Саратов</a>
+            <a href="#">Саратовская область</a>
+            <a href="#">Свердловская область</a>
+            <a href="#">Сергиев Посад</a>
+            <a href="#">Симферополь</a>
+            <a href="#">Смоленск</a>
+            <a href="#">Соликамск</a>
+            <a href="#">Ступино</a>
+            <a href="#">Сургут</a>
+            <a href="#">Таганрог</a>
+            <a href="#">Тамбов</a>
+            <a href="#">Тверь</a>
+            <a href="#">Тольятти</a>
+            <a href="#">Удмуртия</a>
+            <a href="#">Ульяновск</a>
+            <a href="#">Уссурийск</a>
+            <a href="#">Уфа</a>
+            <a href="#">Хабаровск</a>
+            <a href="#">Хакасия</a>
+            <a href="#">Челябинск</a>
+            <a href="#">Череповец</a>
+            <a href="#">Ярославль</a>
+        </div>
+        <h3>Города СНГ</h3>
+        <div class="linkhub-cloud">
+            <a href="#">Алматы</a>
+            <a href="#">Витебск</a>
+            <a href="#">Гомель</a>
+            <a href="#">Костанай</a>
+            <a href="#">Минск</a>
+            <a href="#">Могилёв</a>
+            <a href="#">Николаев</a>
+            <a href="#">Славянск</a>
+        </div>
+    </section>
+
     <footer class="footer-eeat">
         <div>© 2026 LoveRating. Независимый рейтинг сайтов знакомств.</div>
         <div class="docs">
             <i class="fas fa-file-lines"></i>
+            <a href="#">Рейтинг: Россия</a> |
+            <a href="#">Рейтинг: Беларусь</a> |
             <a href="#">Политика конфиденциальности</a> |
             <a href="#">О проекте</a> |
             <a href="#">Контакты</a>
         </div>
-        <div><i class="fas fa-database"></i> Обновлено 01.09.2026</div>
+        <div><i class="fas fa-database"></i> Обновлено 31.08.2026</div>
     </footer>
 
 </div>
+
+<script>
+    (function () {
+        var burgerBtn = document.getElementById('burgerBtn');
+        var mainNav = document.getElementById('mainNav');
+        if (!burgerBtn || !mainNav) return;
+
+        function closeNav() {
+            mainNav.classList.remove('open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        burgerBtn.addEventListener('click', function () {
+            var isOpen = mainNav.classList.toggle('open');
+            burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        mainNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeNav);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 700) closeNav();
+        });
+    })();
+</script>
 </body>
 </html>
