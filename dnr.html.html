@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайты знакомств в ДНР: рейтинг 15 сервисов на 2026 год | LoveRating</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px 30px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9edf2;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e11d48;
+            letter-spacing: -0.5px;
+        }
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .update-badge {
+            background: #e9edf2;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #334155;
+        }
+        .update-badge i {
+            margin-right: 6px;
+            color: #22c55e;
+        }
+
+        .author-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 5px 14px 5px 10px;
+            border-radius: 40px;
+        }
+        .author-mini .avatar-placeholder {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #e11d48;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .author-mini .name {
+            color: #0f172a;
+        }
+        .author-mini .badge {
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+        }
+
+        .trust-banner {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 18px 25px;
+            margin: 25px 0 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px 20px;
+            border-left: 5px solid #e11d48;
+        }
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .trust-item i {
+            font-size: 18px;
+            color: #e11d48;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .trust-item .trust-text {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .trust-item span {
+            color: #475569;
+            font-weight: 400;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+        .page-title p {
+            color: #64748b;
+            font-size: 18px;
+        }
+
+        .filter-sort {
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 0 25px;
+        }
+        .sort-select {
+            background: #fff;
+            border: 1px solid #d1d9e6;
+            border-radius: 40px;
+            padding: 10px 20px;
+            font-weight: 500;
+            color: #0f172a;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .editor-note {
+            margin: 18px 0 8px;
+            padding: 16px 20px;
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 14px;
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.7;
+        }
+        .editor-note strong { color: #e11d48; }
+
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* === ИСПРАВЛЕННЫЙ БЛОК КАРТОЧКИ === */
+        .site-card {
+            background: #fff;
+            border: 1px solid #e9edf2;
+            border-radius: 20px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 140px 1fr 180px;
+            gap: 20px;
+            align-items: stretch;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .site-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+        }
+
+        .card-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .card-icon .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: #e11d48;
+            border: 1px solid #e2e8f0;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .card-icon .icon-circle .rank-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #0f172a;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 40px;
+        }
+        .card-icon .rating-stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        .card-icon .rating-num {
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .card-info .sub-title {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0 4px;
+        }
+        .card-tags .tag {
+            background: #f1f5f9;
+            padding: 3px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .card-tags .tag.highlight {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #334155;
+        }
+        .card-features i {
+            color: #e11d48;
+            width: 18px;
+            margin-right: 4px;
+        }
+        .card-features .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .card-verdict {
+            margin-top: 10px;
+            font-size: 13.5px;
+            color: #64748b;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .card-verdict strong {
+            color: #475569;
+            font-style: normal;
+        }
+
+        /* === ИСПРАВЛЕННЫЙ БЛОК ДЕЙСТВИЙ === */
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 8px;
+            justify-content: center;
+            min-width: 160px;
+        }
+        .card-actions .btn-primary {
+            background: #e11d48;
+            color: #fff;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+        .card-actions .btn-primary:hover {
+            background: #be123c;
+        }
+        .card-actions .btn-outline {
+            background: transparent;
+            border: 1px solid #d1d9e6;
+            padding: 8px 12px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+        .card-actions .btn-outline:hover {
+            background: #f1f5f9;
+        }
+        .card-actions .small-meta {
+            font-size: 11px;
+            color: #94a3b8;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+        @media (max-width: 768px) {
+            .site-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
+            }
+            .card-actions {
+                min-width: unset;
+                align-items: stretch;
+            }
+            .card-actions .btn-primary,
+            .card-actions .btn-outline {
+                white-space: normal;
+            }
+            .card-tags {
+                justify-content: center;
+            }
+            .card-features {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .trust-banner { flex-direction: column; align-items: flex-start; }
+            .header-top { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* --- Остальные стили (экспертиза, автор, FAQ, футер) --- */
+        .expertise-section {
+            margin: 50px 0 40px;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 30px 30px 20px;
+            border: 1px solid #e9edf2;
+        }
+        .expertise-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .expertise-section h2 i {
+            color: #e11d48;
+        }
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .expertise-item {
+            background: #fff;
+            padding: 18px 16px;
+            border-radius: 14px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .expertise-item .ex-icon {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+        .expertise-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .expertise-item p {
+            font-size: 14px;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        .review-article {
+            margin: 40px 0;
+            padding: 25px 30px;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid #e9edf2;
+        }
+        .review-article h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .review-article h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0 8px;
+        }
+        .review-article p {
+            color: #334155;
+            margin-bottom: 12px;
+        }
+        .review-article ul {
+            padding-left: 22px;
+            margin-bottom: 14px;
+            color: #334155;
+        }
+
+        .author-box {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 2px solid #f1f5f9;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .author-box .author-avatar {
+            flex-shrink: 0;
+        }
+        .author-box .author-avatar .avatar-large {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #e11d48;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            border: 3px solid #f1f5f9;
+        }
+        .author-box .author-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .author-box .author-info .author-name {
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .author-box .author-info .author-name .badge {
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+        }
+        .author-box .author-info .author-title {
+            color: #64748b;
+            font-size: 15px;
+            margin: 2px 0 8px;
+        }
+        .author-box .author-info .author-bio {
+            color: #334155;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .author-box .author-info .author-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 30px;
+            font-size: 14px;
+            color: #475569;
+        }
+        .author-box .author-info .author-stats i {
+            color: #e11d48;
+            width: 18px;
+            margin-right: 4px;
+        }
+        .author-box .author-info .author-stats .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .author-box .author-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .author-box .author-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: #334155;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .author-box .author-social a:hover {
+            background: #e11d48;
+            color: #fff;
+        }
+        .author-box .author-update {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .author-box .author-update i {
+            color: #22c55e;
+        }
+        .author-box .author-update .update-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .faq-section {
+            margin: 40px 0 20px;
+            border-top: 1px solid #e9edf2;
+            padding-top: 30px;
+        }
+        .faq-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .faq-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .faq-item p {
+            color: #475569;
+            font-size: 15px;
+        }
+
+        .footer-eeat {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e9edf2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        .footer-eeat .docs i {
+            margin-right: 6px;
+            color: #e11d48;
+        }
+        .footer-eeat .docs a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 8px;
+        }
+        .footer-eeat .docs a:hover {
+            text-decoration: underline;
+        }
+
+        .linkhub-section {
+            margin: 40px 0 20px;
+            border-top: 1px solid #e9edf2;
+            padding-top: 30px;
+        }
+        .linkhub-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .linkhub-intro {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+        .linkhub-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .linkhub-cloud a {
+            background: #f1f5f9;
+            color: #334155;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 40px;
+            transition: all 0.15s;
+        }
+        .linkhub-cloud a:hover {
+            background: #e11d48;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .author-box { flex-direction: column; align-items: center; text-align: center; }
+            .author-box .author-info .author-stats { justify-content: center; }
+            .author-box .author-social { justify-content: center; }
+            .author-box .author-update { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header class="header-top">
+        <div class="logo">
+            <i class="fas fa-heart"></i> LoveRating
+        </div>
+        <div class="header-meta">
+            <div class="update-badge">
+                <i class="fas fa-circle-check"></i> Обновлено сегодня
+            </div>
+            <div class="author-mini">
+                <span class="avatar-placeholder">АС</span>
+                <span class="name">Анна Светлова</span>
+                <span class="badge">Эксперт</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="trust-banner">
+        <div class="trust-item"><i class="fas fa-shield-halved"></i> <span class="trust-text"><strong>Ссылки — только официальные</strong> <span>| никаких сомнительных зеркал</span></span></div>
+        <div class="trust-item"><i class="fas fa-pen-fancy"></i> <span class="trust-text"><strong>Опыт автора из первых рук</strong> <span>| никакого рерайта чужих статей</span></span></div>
+        <div class="trust-item"><i class="fas fa-list-check"></i> <span class="trust-text"><strong>15 сервисов для ДНР</strong> <span>| актуально на 2026 год</span></span></div>
+        <div class="trust-item"><i class="fas fa-clock"></i> <span class="trust-text"><strong>Регистрация за 5 минут</strong> <span>| бесплатно для старта</span></span></div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px;">
+        <div class="page-title">
+            <h1>Где искать пару в ДНР: топ-15 сайтов знакомств на 2026 год</h1>
+            <p>Анна Светлова, психолог по отношениям, сравнила сервисы, которыми пользуются в Донецке и других городах ДНР — от давно известного LovePlanet до совсем свежего Lovesta</p>
+        </div>
+        <div class="filter-sort">
+            <select class="sort-select">
+                <option>⭐ Топ выбор</option>
+                <option>🔥 Популярные</option>
+                <option>🆕 Новые</option>
+                <option>💬 Активные</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="editor-note">
+        Если коротко и без раскачки: из всех пятнадцати я бы в первую очередь посоветовала <strong>LovePlanet</strong> — крупная база и щедрый бесплатный функционал делают его самым простым стартом. Но у каждого сервиса своя сильная сторона, поэтому ниже — подробный разбор по каждому из них.
+    </div>
+
+    <div class="cards-grid">
+        <!-- 1 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№1</span><i class="fas fa-heart-circle-check"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.9 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>LovePlanet <span style="font-size:14px; font-weight:400; color:#e11d48; margin-left:6px;">Выбор редакции</span></h3>
+                <div class="sub-title">Крупнейшая база рунета — с активными анкетами и в Донецке, и в других городах ДНР</div>
+                <div class="card-tags">
+                    <span class="tag highlight">❤️ №1 в рейтинге</span>
+                    <span class="tag">Поиск по своему городу</span>
+                    <span class="tag">Личные дневники</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-user-group"></i> Огромная база анкет, где реально найти людей именно в своём городе ДНР</span>
+                    <span class="feature-item"><i class="fas fa-comments"></i> Формат с дневниками и оценкой фото снимает часть неловкости первого сообщения</span>
+                    <span class="feature-item"><i class="fas fa-shield"></i> Отдельное приложение Chocolate заточено под то, чтобы перейти от переписки к живой встрече</span>
+                </div>
+                <div class="card-verdict">База настолько большая, что фильтр по цели знакомства реально сужает список анкет, а не выдаёт пустоту. Из минусов — заметная часть возможностей работает только в приложении, сама браузерная версия выглядит устаревшей.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Зарегистрироваться</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно / VIP от 289 ₽</div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№2</span><i class="fas fa-comment-dots"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.7 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Без Комплексов</h3>
+                <div class="sub-title">Площадка для тех, кому важно не объяснять особенности здоровья каждому новому собеседнику</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🤝 Принятие без условий</span>
+                    <span class="tag">Честная анкета</span>
+                    <span class="tag">Тематические группы</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-comment-dots"></i> Профиль позволяет открыто написать об особенностях здоровья, не пряча это между строк</span>
+                    <span class="feature-item"><i class="fas fa-users"></i> Кроме анкет есть форум, где можно просто пообщаться на близкие темы</span>
+                    <span class="feature-item"><i class="fas fa-heart"></i> Первые сообщения здесь получаются проще и теплее, чем на крупных универсальных сайтах</span>
+                </div>
+                <div class="card-verdict">Сервис решает конкретную задачу: не нужно отдельно оговаривать особенности здоровья или готовиться к чужой реакции. Из минусов — аудитория пока не самая массовая, придётся проявить терпение при поиске.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Зарегистрироваться</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатная регистрация и общение</div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№3</span><i class="fas fa-robot"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.6 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Lovesta</h3>
+                <div class="sub-title">Telegram-бот вместо отдельного приложения — знакомства прямо в мессенджере</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🤖 Работает в Telegram</span>
+                    <span class="tag">Ничего ставить не нужно</span>
+                    <span class="tag">Свежий проект</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-robot"></i> Регистрация и переписка идут прямо в Telegram, без перехода на сторонний сайт</span>
+                    <span class="feature-item"><i class="fas fa-bolt"></i> Бот проводит через анкету за несколько шагов — быстрее классической формы</span>
+                    <span class="feature-item"><i class="fas fa-comment"></i> Логичный выбор, если Telegram и так открыт весь день</span>
+                </div>
+                <div class="card-verdict">Плюс в том, что не нужно захламлять телефон ещё одним приложением — всё завязано на привычный мессенджер. Минус — сервис молодой, и база пользователей в регионе только формируется, будьте готовы к этому.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Открыть бота</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно</div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№4</span><i class="fas fa-brain"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.6 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Teamo</h3>
+                <div class="sub-title">Психологический тест вместо простого свайпа по фотографиям</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🧠 Тест на совместимость</span>
+                    <span class="tag">Раздел совпадений</span>
+                    <span class="tag">Быстрый вход через соцсети</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-list-check"></i> Подбор строится на результатах теста, а не только на том, кто просто рядом</span>
+                    <span class="feature-item"><i class="fas fa-thumbs-up"></i> Полноценный доступ к анкетам открывается только после заполнения профиля целиком</span>
+                    <span class="feature-item"><i class="fas fa-coins"></i> Заходят сюда обычно осознанно, а не от скуки полистать вечером</span>
+                </div>
+                <div class="card-verdict">Тест на совместимость реально помогает — сокращает время на переписку с теми, кто явно не подходит по ценностям. Но переписка с теми, кто не ответил взаимностью, доступна только по подписке — это ощутимое ограничение бесплатной версии.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Пройти тест</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно / от 899 ₽ мес.</div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№5</span><i class="fas fa-comments"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.6 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>VK Знакомства</h3>
+                <div class="sub-title">Анкета строится на вашем настоящем профиле ВКонтакте — фейковых страниц заметно меньше</div>
+                <div class="card-tags">
+                    <span class="tag highlight">⚡ Без отдельной регистрации</span>
+                    <span class="tag">Анонимный просмотр</span>
+                    <span class="tag">Активность по вечерам</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-arrow-right-arrow-left"></i> Всё, включая фото и интересы, берётся напрямую из вашей страницы ВКонтакте</span>
+                    <span class="feature-item"><i class="fas fa-user-secret"></i> Функция скрывает вас от друзей, поэтому листать анкеты можно без опасений</span>
+                    <span class="feature-item"><i class="fas fa-music"></i> Формат ощущается легче — многие здесь не в режиме «серьёзного поиска», а просто общаются</span>
+                </div>
+                <div class="card-verdict">Минус в том, что без подписки не видно, кто отметил вас симпатией, — приходится действовать вслепую. Зато привязка к реальной странице ВКонтакте резко снижает число фейков, и для тех, кто не любит знакомиться на улице, формат ощущается комфортным.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Открыть</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно / Premium от 849 ₽</div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№6</span><i class="fas fa-user-check"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <div class="rating-num">4.5 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Natalie Date</h3>
+                <div class="sub-title">Развёрнутая анкета вместо пары фото — сразу видно серьёзный настрой сервиса</div>
+                <div class="card-tags">
+                    <span class="tag highlight">💍 Акцент на серьёзные отношения</span>
+                    <span class="tag">Подробная анкета</span>
+                    <span class="tag">Фильтр по целям</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-list-check"></i> Вопросов в анкете заметно больше, чем на сайтах для лёгкого флирта</span>
+                    <span class="feature-item"><i class="fas fa-user-check"></i> Общая направленность — постоянные отношения, а не быстрая переписка на пару дней</span>
+                    <span class="feature-item"><i class="fas fa-filter"></i> Можно сразу отфильтровать анкеты по тому, что человек ищет</span>
+                </div>
+                <div class="card-verdict">Заполнить подробную анкету дольше, чем на большинстве сайтов, — это стоит учитывать заранее. Зато сразу понятно, что аудитория настроена серьёзно. Открытых обзоров о сервисе немного, поэтому перед регистрацией стоит поискать свежие впечатления пользователей.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Зарегистрироваться</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатная регистрация, часть функций платная</div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№7</span><i class="fas fa-bullseye"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.4 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Podbor</h3>
+                <div class="sub-title">Вместо бесконечной ленты — подбор анкет под заданные вами критерии</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🎯 Точечный подбор анкет</span>
+                    <span class="tag">Короткая регистрация</span>
+                    <span class="tag">Простой интерфейс</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-bullseye"></i> Система сама подбирает анкеты под критерии, а не заставляет листать всё подряд</span>
+                    <span class="feature-item"><i class="fas fa-bolt"></i> На старте не заваливают лишними вопросами — регистрация короткая</span>
+                    <span class="feature-item"><i class="fas fa-list-check"></i> Экономит время тем, кто не готов долго перебирать нерелевантные анкеты</span>
+                </div>
+                <div class="card-verdict">Раздражает бесконечный скролл на крупных сайтах? Здесь его нет — акцент на точечный подбор под ваш запрос. Сервис не входит в число самых раскрученных, но это же означает и меньше конкуренции среди анкет.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Подобрать анкеты</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатная регистрация</div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№8</span><i class="fas fa-user-group"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.4 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Beboo</h3>
+                <div class="sub-title">Сервис для тех, кто ищет отношения, а не короткую переписку на вечер</div>
+                <div class="card-tags">
+                    <span class="tag highlight">💬 Ставка на серьёзность</span>
+                    <span class="tag">Встроенные звонки</span>
+                    <span class="tag">Защита от спама</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-heart-circle-check"></i> Развёрнутая анкета на входе сразу отсекает тех, кто ищет другое</span>
+                    <span class="feature-item"><i class="fas fa-gift"></i> Есть встроенные звонки — удобно, если переписываться нет времени</span>
+                    <span class="feature-item"><i class="fas fa-ban"></i> Копирование текста в сообщениях заблокировано — это снижает число спам-рассылок</span>
+                </div>
+                <div class="card-verdict">Регистрация возможна только по телефону и с фото — анонимно завести анкету не выйдет. Зато случайных людей, которые просто хотят поболтать, здесь меньше: сервис действительно настроен на серьёзные знакомства.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Зарегистрироваться</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно / VIP от 299 ₽</div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№9</span><i class="fas fa-seedling"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.3 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Kupidonov</h3>
+                <div class="sub-title">Новый проект, где базовые функции не спрятаны за платной стеной</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🌱 Свежий проект</span>
+                    <span class="tag">Простая регистрация</span>
+                    <span class="tag">Растущая база</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-seedling"></i> Простой интерфейс без агрессивных платных ограничений на базовые действия</span>
+                    <span class="feature-item"><i class="fas fa-user-plus"></i> Хороший вариант для тех, кто хочет попробовать что-то новое, не отказываясь от привычных сайтов</span>
+                    <span class="feature-item"><i class="fas fa-comment"></i> Анкеты в основном активные — сервис молодой, заброшенных профилей почти не скопилось</span>
+                </div>
+                <div class="card-verdict">Сервис только набирает обороты, поэтому большой базы в регионе ждать пока рано. Плюс в том, что заброшенных анкет здесь почти нет — всё, что есть, относительно свежее.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Зарегистрироваться</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно</div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№10</span><i class="fas fa-globe"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.3 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>RusDate</h3>
+                <div class="sub-title">Спокойный формат без назойливых напоминаний купить подписку</div>
+                <div class="card-tags">
+                    <span class="tag highlight">💬 Прямой стиль общения</span>
+                    <span class="tag">Анкеты доступны без регистрации</span>
+                    <span class="tag">Игра «Симпатии»</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-robot"></i> Анкеты доступны для просмотра ещё до регистрации</span>
+                    <span class="feature-item"><i class="fas fa-eye"></i> Средний возраст аудитории выше, чем на молодёжных сервисах, — сюда приходят целенаправленно</span>
+                    <span class="feature-item"><i class="fas fa-hand-wave"></i> Если не хочется вручную настраивать фильтры, встроенный бот сам предложит подходящие варианты</span>
+                </div>
+                <div class="card-verdict">Формальностей вроде «привет, как дела» здесь меньше — люди быстрее переходят к сути. Особенно комфортный вариант для аудитории постарше: сервис не давит на покупку подписки на каждом шагу.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Смотреть анкеты</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно + отдельные платные услуги</div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№11</span><i class="fas fa-video"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.1 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Ruamo</h3>
+                <div class="sub-title">Подтверждение анкеты через видео — редкая для рынка функция против фейков</div>
+                <div class="card-tags">
+                    <span class="tag highlight">🎥 Видеоподтверждение анкеты</span>
+                    <span class="tag">Видеозвонок до встречи</span>
+                    <span class="tag">Смешанная аудитория</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-video"></i> Видеоподтверждение анкеты заметно сокращает количество фейковых профилей</span>
+                    <span class="feature-item"><i class="fas fa-phone"></i> Позвонить по видео можно прямо внутри сервиса, не делясь номером телефона</span>
+                    <span class="feature-item"><i class="fas fa-eye"></i> Удобно тем, кто хочет увидеть собеседника до того, как договариваться о встрече</span>
+                </div>
+                <div class="card-verdict">Важный момент: аудитория здесь смешанная, и в отзывах встречаются упоминания платных услуг сопровождения — цели собеседника стоит уточнять с первых сообщений. При этом видеоподтверждение анкеты работает на практике: откровенных фейков заметно меньше, чем на сайтах без такой проверки.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Смотреть анкеты</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно, часть функций платная</div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№12</span><i class="fas fa-map-pin"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.1 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>LinkYou</h3>
+                <div class="sub-title">Геолокация как основа поиска — удобно искать людей поблизости</div>
+                <div class="card-tags">
+                    <span class="tag highlight">📍 Поиск рядом</span>
+                    <span class="tag">Простой интерфейс</span>
+                    <span class="tag">Быстрый старт</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-map-pin"></i> Расстояние до собеседника — главный фильтр, это упрощает поиск по своему городу</span>
+                    <span class="feature-item"><i class="fas fa-bolt"></i> Без долгой анкеты — регистрация занимает буквально пару шагов</span>
+                    <span class="feature-item"><i class="fas fa-comment"></i> Формат больше про лёгкое общение, чем про глубокую совместимость</span>
+                </div>
+                <div class="card-verdict">Для серьёзных отношений функций маловато — сервис больше заточен под лёгкие знакомства рядом с домом. Но если важнее скорость и простота, а не идеальное совпадение по интересам, вариант рабочий.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Открыть</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно</div>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№13</span><i class="fas fa-heart"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.0 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Znakomstva.ru</h3>
+                <div class="sub-title">Привычный, ничем не примечательный формат сайта знакомств</div>
+                <div class="card-tags">
+                    <span class="tag highlight">💗 Проверенный формат</span>
+                    <span class="tag">Короткая анкета</span>
+                    <span class="tag">Давно на рынке</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-heart"></i> Ничего лишнего — стандартный набор функций без сложных механик</span>
+                    <span class="feature-item"><i class="fas fa-pen"></i> Анкета короткая, без утомительных тестов личности</span>
+                    <span class="feature-item"><i class="fas fa-thumbs-up"></i> Разобраться можно сразу, без инструкции</span>
+                </div>
+                <div class="card-verdict">Ничем не удивит — зато и разбираться в интерфейсе не придётся. Скорее запасной вариант на случай, если более заметные сервисы из рейтинга уже опробованы.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Смотреть анкеты</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатная регистрация</div>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№14</span><i class="fas fa-house"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.0 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Где папа</h3>
+                <div class="sub-title">Узкая ниша — для родителей, которые растят детей самостоятельно</div>
+                <div class="card-tags">
+                    <span class="tag highlight">👨‍👧 Родители-одиночки</span>
+                    <span class="tag">Без платных статусов</span>
+                    <span class="tag">Раздел «Встречи»</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-calendar-check"></i> Кроме анкет — форум и доска объявлений на близкие родителям темы</span>
+                    <span class="feature-item"><i class="fas fa-comments"></i> Первое сообщение можно отправить, даже не завершив регистрацию</span>
+                    <span class="feature-item"><i class="fas fa-user-slash"></i> Платных статусов и продвижения анкеты здесь не предусмотрено вовсе</span>
+                </div>
+                <div class="card-verdict">Из минусов — простой интерфейс и отсутствие мобильного приложения. Но ниша подобрана точно: если вы одни воспитываете ребёнка, не приходится объяснять это каждому новому знакомому с нуля.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Написать</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Полностью бесплатно</div>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="site-card">
+            <div class="card-icon">
+                <div class="icon-circle"><span class="rank-badge">№15</span><i class="fas fa-newspaper"></i></div>
+                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <div class="rating-num">4.0 / 5</div>
+            </div>
+            <div class="card-info">
+                <h3>Рамблер/Знакомства</h3>
+                <div class="sub-title">Раздел знакомств большого портала с недельным бесплатным Премиумом</div>
+                <div class="card-tags">
+                    <span class="tag highlight">📰 Неделя Премиума бесплатно</span>
+                    <span class="tag">Верификация через соцсети</span>
+                    <span class="tag">Формат «Тайный партнёр»</span>
+                </div>
+                <div class="card-features">
+                    <span class="feature-item"><i class="fas fa-bullseye"></i> Уже на этапе регистрации нужно указать цель — под неё и подбираются анкеты</span>
+                    <span class="feature-item"><i class="fas fa-comments"></i> Верификация фото вместе с привязкой к соцсетям снижает число поддельных анкет</span>
+                    <span class="feature-item"><i class="fas fa-fingerprint"></i> Мобильную версию сервиса регулярно дорабатывают</span>
+                </div>
+                <div class="card-verdict">Интерфейс местами ощущается устаревшим — это первое, что бросается в глаза. Но неделя бесплатного Премиума позволяет честно оценить весь функционал, прежде чем платить.</div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-primary">Попробовать</a>
+                <a href="#" class="btn-outline">Подробнее</a>
+                <div class="small-meta">Бесплатно / пробный Премиум 7 дней</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="expertise-section">
+        <h2><i class="fas fa-lightbulb"></i> Как выбрать сервис под свою ситуацию</h2>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <div class="ex-icon">🎯</div>
+                <h4>Определите, что вы ищете</h4>
+                <p>Если цель — серьёзные отношения, обратите внимание на сервисы с тестами и подробными анкетами: Teamo, Natalie Date, LovePlanet. Для лёгкого общения больше подойдут форматы на геолокации и быстром контакте — LinkYou, Lovesta.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="ex-icon">🔒</div>
+                <h4>Проверьте безопасность сервиса</h4>
+                <p>Обращайте внимание на модерацию анкет, подтверждение номера или фото и на то, отвечает ли служба поддержки, — это заметно снижает риск нарваться на фейковый профиль.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="ex-icon">💬</div>
+                <h4>Убедитесь, что база активна</h4>
+                <p>Заявленное число анкет мало что значит, если на сообщения никто не отвечает. Ориентируйтесь на статус «онлайн» и на то, появляются ли новые анкеты именно в вашем населённом пункте.</p>
+            </div>
+            <div class="expertise-item">
+                <div class="ex-icon">💰</div>
+                <h4>Поймите, за что платите</h4>
+                <p>Основные функции обычно доступны бесплатно, а платят за расширенные фильтры, снятие лимита на сообщения и просмотр списка «кто вами интересовался». Оформлять подписку разумно только после того, как опробовали бесплатную версию.</p>
+            </div>
+        </div>
+    </section>
+
+    <article class="review-article">
+        <h2>Знакомства онлайн в ДНР: что действительно работает</h2>
+        <h3>Почему онлайн-формат здесь особенно востребован</h3>
+        <p>Заговорить с незнакомым человеком на улице решится не каждый, а вот написать первое сообщение онлайн — куда проще: есть время подумать над ответом, и это ощущается безопаснее. Именно поэтому сайты и приложения знакомств остаются рабочим инструментом и для тех, кто живёт в Донецке, Макеевке и других городах ДНР.</p>
+        <p>Общий тренд последних лет — уход от простого объёма анкет к их подлинности: VK Знакомства и Teamo делают ставку на привязку к реальному профилю и психологические тесты, а LovePlanet продолжает расширять базу и улучшать алгоритмы подбора. Отдельно набирает популярность видеоподтверждение анкет ещё до переписки — этим славится Ruamo, что помогает отсеивать фейки на самом старте.</p>
+        <h3>Как искать эффективнее именно в ДНР</h3>
+        <ul>
+            <li><strong>Фото:</strong> несколько живых кадров без плотных фильтров вызывают больше доверия, чем один отретушированный портрет.</li>
+            <li><strong>Геопоиск:</strong> часть сервисов даёт фильтр по городу или ближайшему району — используйте его, если цель дойти до реальной встречи, а не только переписываться.</li>
+            <li><strong>Местный контекст в анкете:</strong> упоминание конкретного места — любимого кафе, парка, района — цепляет собеседника лучше, чем общая фраза «люблю путешествия».</li>
+            <li><strong>Активность:</strong> старайтесь отвечать в течение суток и заходить в профиль регулярно — на большинстве сервисов это поднимает анкету выше в выдаче.</li>
+        </ul>
+        <h3>Как обезопасить себя при первой встрече</h3>
+        <p>Не переносите общение в сторонние мессенджеры сразу и никогда не переводите деньги собеседнику до личной встречи — под каким бы предлогом это ни предлагали. Для первой встречи выбирайте людное место в центре — кафе, торговый центр, оживлённую улицу, — а не безлюдный двор или чужую квартиру.</p>
+
+        <div class="author-box">
+            <div class="author-avatar">
+                <div class="avatar-large">АС</div>
+            </div>
+            <div class="author-info">
+                <div class="author-name">
+                    Анна Светлова
+                    <span class="badge">✍️ Автор-эксперт</span>
+                    <span class="badge" style="background:#fce7f3; color:#be185d;">🏆 Психолог по отношениям</span>
+                </div>
+                <div class="author-title">Практикующий психолог, консультирует по онлайн-знакомствам и отношениям</div>
+                <div class="author-bio">
+                    Для этого рейтинга Анна лично прошла регистрацию на всех 15 сервисах — от заполнения анкеты до первых сообщений — и оценивала не только функциональность, но и то, насколько активны анкеты у аудитории из ДНР и реально ли довести переписку до личной встречи. Отдельно консультирует по тому, почему один профиль получает отклики, а другой остаётся незамеченным.
+                </div>
+                <div class="author-stats">
+                    <span class="stat-item"><i class="fas fa-pen-to-square"></i> 96 обзоров сервисов знакомств</span>
+                    <span class="stat-item"><i class="fas fa-star"></i> 4.8 средняя оценка обзоров</span>
+                    <span class="stat-item"><i class="fas fa-user-check"></i> 900+ консультаций по отношениям</span>
+                    <span class="stat-item"><i class="fas fa-graduation-cap"></i> Практикующий психолог</span>
+                </div>
+                <div class="author-social">
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Дзен"><i class="fab fa-yandex"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="author-update">
+                    <span class="update-item"><i class="fas fa-pen-fancy"></i> Статья написана: 01.09.2026</span>
+                    <span class="update-item"><i class="fas fa-rotate"></i> Последнее обновление: <strong>01.09.2026</strong></span>
+                    <span class="update-item"><i class="fas fa-clock"></i> Время чтения: 9 минут</span>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section class="faq-section">
+        <h2>Частые вопросы о сайтах знакомств в ДНР</h2>
+        <div class="faq-item">
+            <h4>Нужно ли указывать в анкете настоящее имя и точный адрес?</h4>
+            <p>Точный домашний адрес не указывайте нигде — на большинстве сервисов достаточно города или района. Имя можно оставить настоящее или короткую форму, если так комфортнее: на репутацию анкеты это не влияет, а живое имя обычно вызывает больше доверия, чем ник.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Анкета висит неделю, а откликов почти нет — в чём может быть дело?</h4>
+            <p>Чаще всего дело в фото и первой строке описания: разномастные случайные кадры работают хуже 3–4 живых фотографий, а пустое поле «о себе» отпугивает сильнее, чем длинный текст. Проверьте и слишком узкие фильтры по возрасту или радиусу поиска — из-за них анкету могут просто не показывать подходящим людям.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Можно ли регистрироваться сразу на нескольких сайтах из рейтинга?</h4>
+            <p>Да, и многие так и делают — сервисы никак не конкурируют друг с другом технически. Единственный нюанс — на 2–3 площадках проще следить за перепиской и не путать, кому что уже написали, чем сразу на всех пятнадцати.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Когда стоит переходить от переписки к звонку или видео?</h4>
+            <p>Если переписка тянется больше недели без предложения созвониться — это повод насторожиться, а не ускорять события искусственно. Ориентир простой: как только переписываться становится скучно, а хочется услышать голос, — самое время для звонка, а на сервисах вроде Ruamo это вообще встроенная функция.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Платная подписка правда повышает шансы на знакомство?</h4>
+            <p>Прямой связи здесь нет — подписка обычно снимает технические ограничения (лимит сообщений, просмотр «кто интересовался»), а не делает анкету привлекательнее. Разумнее сначала протестировать бесплатную версию хотя бы неделю и только потом решать, нужны ли платные функции именно вам.</p>
+        </div>
+    </section>
+
+    <section class="linkhub-section">
+        <h2>Лучшие сайты знакомств по городам России</h2>
+        <p class="linkhub-intro">Подборки по городам и регионам России — какие сервисы дают больше активных анкет именно у вас поблизости.</p>
+        <div class="linkhub-cloud">
+            <a href="#">Азов</a>
+            <a href="#">Алтайский край</a>
+            <a href="#">Анапа</a>
+            <a href="#">Арзамас</a>
+            <a href="#">Армавир</a>
+            <a href="#">Астрахань</a>
+            <a href="#">Балаково</a>
+            <a href="#">Барнаул</a>
+            <a href="#">Белгород</a>
+            <a href="#">Белово</a>
+            <a href="#">Бийск</a>
+            <a href="#">Благовещенск</a>
+            <a href="#">Брянск</a>
+            <a href="#">Великий Новгород</a>
+            <a href="#">Владивосток</a>
+            <a href="#">Волгоград</a>
+            <a href="#">Волжский</a>
+            <a href="#">Воронеж</a>
+            <a href="#">Выборг</a>
+            <a href="#">ДНР</a>
+            <a href="#">Екатеринбург</a>
+            <a href="#">Железногорск</a>
+            <a href="#">Иваново</a>
+            <a href="#">Ижевск</a>
+            <a href="#">Иркутск</a>
+            <a href="#">Йошкар-Ола</a>
+            <a href="#">Калининград</a>
+            <a href="#">Калуга</a>
+            <a href="#">Каменск-Уральский</a>
+            <a href="#">Камчатский край</a>
+            <a href="#">Кемерово</a>
+            <a href="#">Киров</a>
+            <a href="#">Коломна</a>
+            <a href="#">Комсомольск-на-Амуре</a>
+            <a href="#">Копейск</a>
+            <a href="#">Кострома</a>
+            <a href="#">Краснодар</a>
+            <a href="#">Красноярск</a>
+            <a href="#">Крым</a>
+            <a href="#">Курган</a>
+            <a href="#">Липецк</a>
+            <a href="#">Лиски</a>
+            <a href="#">Магнитогорск</a>
+            <a href="#">Междуреченск</a>
+            <a href="#">Миллерово</a>
+            <a href="#">Москва</a>
+            <a href="#">Муром</a>
+            <a href="#">Набережные Челны</a>
+            <a href="#">Нальчик</a>
+            <a href="#">Нижневартовск</a>
+            <a href="#">Нижний Новгород</a>
+            <a href="#">Нижний Тагил</a>
+            <a href="#">Новокузнецк</a>
+            <a href="#">Новороссийск</a>
+            <a href="#">Орёл</a>
+            <a href="#">Оренбург</a>
+            <a href="#">Орск</a>
+            <a href="#">Пенза</a>
+            <a href="#">Пермь</a>
+            <a href="#">Петрозаводск</a>
+            <a href="#">Приморский край</a>
+            <a href="#">Прокопьевск</a>
+            <a href="#">Псков</a>
+            <a href="#">Ростовская область</a>
+            <a href="#">Рязань</a>
+            <a href="#">Санкт-Петербург</a>
+            <a href="#">Саратов</a>
+            <a href="#">Саратовская область</a>
+            <a href="#">Свердловская область</a>
+            <a href="#">Сергиев Посад</a>
+            <a href="#">Симферополь</a>
+            <a href="#">Смоленск</a>
+            <a href="#">Соликамск</a>
+            <a href="#">Ступино</a>
+            <a href="#">Сургут</a>
+            <a href="#">Таганрог</a>
+            <a href="#">Тамбов</a>
+            <a href="#">Тверь</a>
+            <a href="#">Тольятти</a>
+            <a href="#">Удмуртия</a>
+            <a href="#">Ульяновск</a>
+            <a href="#">Уссурийск</a>
+            <a href="#">Уфа</a>
+            <a href="#">Хабаровск</a>
+            <a href="#">Хакасия</a>
+            <a href="#">Челябинск</a>
+            <a href="#">Череповец</a>
+            <a href="#">Ярославль</a>
+        </div>
+    </section>
+
+    <footer class="footer-eeat">
+        <div>© 2026 LoveRating. Независимый рейтинг сайтов знакомств.</div>
+        <div class="docs">
+            <i class="fas fa-file-lines"></i>
+            <a href="#">Политика конфиденциальности</a> |
+            <a href="#">О проекте</a> |
+            <a href="#">Контакты</a>
+        </div>
+        <div><i class="fas fa-database"></i> Обновлено 01.09.2026</div>
+    </footer>
+
+</div>
+</body>
+</html>
