@@ -1432,5 +1432,30 @@
     </footer>
 
 </div>
+    <script>
+    (function () {
+        var burgerBtn = document.getElementById('burgerBtn');
+        var mainNav = document.getElementById('mainNav');
+        if (!burgerBtn || !mainNav) return;
+
+        function closeNav() {
+            mainNav.classList.remove('open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        burgerBtn.addEventListener('click', function () {
+            var isOpen = mainNav.classList.toggle('open');
+            burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        mainNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeNav);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 700) closeNav();
+        });
+    })();
+</script>
 </body>
 </html>
